@@ -16,6 +16,11 @@ class EventsHandler {
             let $name = $('#nameInput')
             let $magic = $('#magicInput')
 
+            if($name.val()==="" || $magic.val()===""){
+                alert("You have to enter a name and magic!")
+                return;
+            }
+
             this.repo.addANewUnicorn({ name: $name.val(), magic: $magic.val() }).then(() => {
                 this.renderer.render(this.repo.unicorns)
                 $magic.val("")
