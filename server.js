@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const SERVER_PORT = 2222;
 
-const unicornsApi = require('./apis/uniconsApi');
+const unicornsApi = require('./apis/unicornsApi');
 const app = express();
 
 mongoose.connect('mongodb://localhost/unicornsDB', function () {

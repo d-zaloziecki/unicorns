@@ -9,10 +9,44 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                    <h2 class=''>UNICORNS</h2>
+                    <hr>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-sm-6 form">
+                <h4>Add a new unicorn to the list:</h4> <br>
+                
+                <input class="form-control" type='text' placeholder="Name" id="nameInput"> <br>
+                <input class="form-control" type="text" placeholder="Magic" id="magicInput"> <br>
+                <button type="button" class="btn btn-sm btn-primary add-unicorn">Add Unicorn</button>
+            </div>
+            <div class="col-sm-6 text-center">
+                <h4>All my Unicorns:</h4>
+                <ul id="unicornsList"></ul></div>
+        </div>
+    </div>
+
+    <script id="unicorns-template" type="text/x-handlebars-template">
+        {{#each unicorns}}
+            <li class='unicorn' data-id='{{_id}}'>
+                <div>
+                    Name: {{name}}, 
+                    <br>
+                    Magic: {{magic}}
+                    <br>
+                    <button type="button" class="btn btn-sm btn-danger remove-unicorn">Remove Unicorn</button>
+                </div>
+            </li>
+        {{/each}}
+    </script>
 
     <script src=".\jquery\dist\jquery.js"></script>
     <script src=".\handlebars\dist\handlebars.js"></script>
-    <script src="main.js"></script>    
+    <script src="main.js" type="module"></script>    
 </body>
 </html>
